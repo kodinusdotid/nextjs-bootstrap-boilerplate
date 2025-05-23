@@ -1,18 +1,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { DarkModeToggle } from "@/components/partials/DarkModeToggler";
+import { NextJsLogo, BootstrapLogo } from "@/components/partials/Logos";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+        <div className="d-flex gap-3 align-items-center">
+          <NextJsLogo style={{ color: 'var(--bs-body-color)' }} />
+          <span>+</span>
+          <BootstrapLogo style={{ height: '100%' }} />
+        </div>
         <ol>
           <li>
             Get started by editing <code>src/app/page.tsx</code>.
@@ -21,6 +20,9 @@ export default function Home() {
         </ol>
 
         <div className={styles.ctas}>
+          <DarkModeToggle
+            className={styles.secondary} />
+
           <a
             className={styles.primary}
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

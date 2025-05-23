@@ -4,7 +4,7 @@
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
   --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
+  --button-secondary-hover: #0e0e0e;
 
   display: grid;
   grid-template-rows: 20px 1fr 20px;
@@ -23,7 +23,7 @@
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
 
     --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
+    --button-secondary-hover: #eee;
   }
 }
 
@@ -58,20 +58,18 @@
 
 .ctas {
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
 
-.ctas a {
+.ctas a,
+.ctas button {
   appearance: none;
   border-radius: 128px;
   height: 48px;
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -82,13 +80,19 @@
 }
 
 a.primary {
+  text-decoration: none;
   background: var(--foreground);
   color: var(--background);
   gap: 8px;
 }
 
-a.secondary {
+a.secondary,
+button.secondary {
+  text-decoration: none;
+  border: 0;
+  background: transparent;
   border-color: var(--gray-alpha-200);
+  color: var(--bs-body-color);
   min-width: 158px;
 }
 
@@ -113,11 +117,14 @@ a.secondary {
   a.primary:hover {
     background: var(--button-primary-hover);
     border-color: transparent;
+    color: var(--bs-body-bg);
   }
 
-  a.secondary:hover {
+  a.secondary:hover,
+  button.secondary:hover {
     background: var(--button-secondary-hover);
     border-color: transparent;
+    color: var(--bs-body-bg);
   }
 
   .footer a:hover {
